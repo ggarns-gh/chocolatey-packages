@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+    <metadata>
+        <id>vscode-databricks</id>
+        <version>1.2.3</version>
+        <packageSourceUrl>https://github.com/ggarns-gh/chocolatey-packages</packageSourceUrl>
+        <owners>Graham Garnsworthy</owners>
+        <title>Databricks (VSCode Extension)</title>
+        <authors>Databricks</authors>
+        <projectUrl>https://marketplace.visualstudio.com/itemdetails?itemName=databricks.databricks</projectUrl>
+        <iconUrl>http://rawcdn.githack.com/ggarns-gh/chocolatey-packages/main/icons/databricks.png</iconUrl>
+        <copyright>2023 Databricks, Inc.</copyright>
+        <licenseUrl>https://marketplace.visualstudio.com/items/databricks.databricks/license</licenseUrl>
+        <requireLicenseAcceptance>true</requireLicenseAcceptance>
+        <projectSourceUrl>https://github.com/databricks/databricks-vscode</projectSourceUrl>
+        <docsUrl>https://docs.databricks.com/en/dev-tools/vscode-ext/index.html</docsUrl>
+        <bugTrackerUrl>https://github.com/databricks/databricks-vscode/issues</bugTrackerUrl>
+        <tags>databricks vscode extension</tags>
+        <summary>TODO</summary>
+        <description><![CDATA[TODO]]></description>
+        <releaseNotes>https://marketplace.visualstudio.com/items/databricks.databricks/changelog</releaseNotes>
+        <dependencies>
+            <dependency id="chocolatey-vscode.extension" version="1.1.0" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="tools\**" target="tools" />
+    </files>
+</package>
