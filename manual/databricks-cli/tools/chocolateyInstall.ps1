@@ -6,8 +6,8 @@ $toolsDir    = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $packageArgs = @{
     packageName    = $packageName
     unzipLocation  = $toolsDir
-    url64bit       = 'https://github.com/databricks/cli/releases/download/v0.232.1/databricks_cli_0.232.1_windows_amd64-signed.zip'
-    checksum64     = 'a841eb98ad1df8c184065b78d65a925cb18e1adaa0da0f4f80750694d9b895d5'
+    url64bit       = 'https://github.com/databricks/cli/releases/download/v0.233.0/databricks_cli_0.233.0_windows_amd64-signed.zip'
+    checksum64     = 'b2e8feed6b93537d825dbf433cfa7b532bf0b461bb26eb1ee69713743fcd1c0d'
     checksumType64 = 'sha256'
 }
 
