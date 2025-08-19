@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
     <metadata>
         <id>databricks-cli</id>
-        <version>0.263.0</version>
+        <version>0.264.0</version>
         <packageSourceUrl>https://github.com/ggarns-gh/chocolatey-packages</packageSourceUrl>
         <owners>Graham Garnsworthy</owners>
         <title>Databricks CLI</title>
@@ -24,7 +24,7 @@ The Databricks command-line interface (also known as the **Databricks CLI**) pro
 
 This package installs a version of the Databricks CLI that is currently in [Public Preview](https://docs.databricks.com/en/release-notes/release-types.html).
 
-Running the following command will return version `0.263.0` if the installation was successful:
+Running the following command will return version `0.264.0` if the installation was successful:
 
 ```
 databricks -v
@@ -36,7 +36,7 @@ databricks -v
 - [Basic Usage](https://docs.databricks.com/en/dev-tools/cli/usage.html)
 - [Commands](https://docs.databricks.com/en/dev-tools/cli/commands.html)
 ]]></description>
-        <releaseNotes>https://github.com/databricks/cli/releases/tag/v0.263.0</releaseNotes>
+        <releaseNotes>https://github.com/databricks/cli/releases/tag/v0.264.0</releaseNotes>
     </metadata>
     <files>
         <file src="tools\**" target="tools" />
