@@ -4,6 +4,7 @@ on: [push, workflow_call, workflow_dispatch]
 
 jobs:
   build:
+    name: Build & Test Package
     runs-on: windows-latest
     steps:
       - name: Checkout
@@ -31,7 +32,8 @@ jobs:
 
           If ($actualOutput -ne $expectedOutput) {exit 1}
 
-      - uses: actions/upload-artifact@v7
+      - name: Upload my-artifact
+        uses: actions/upload-artifact@v7
         with:
           name: my-artifact
           path: databricks-cli.*.nupkg
