@@ -1,0 +1,32 @@
+name: Create Release
+
+on: [workflow_dispatch]
+
+jobs:
+  call-build-test:
+    uses: ./.github/workflows/build_test_package.yml
+
+  create-release:
+    name: Create Release
+    needs: call-build-test
+    runs-on: ubuntu-slim
+
+    permissions:
+      actions: read
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Download Artifact
+        uses: actions/download-artifact@v7
+
+      - name: Create Release
+        run: |
+          . ./manual/databricks-cli/tools/config.ps1
+          $tag = "databricks-cli-v$cliVersion"
+          gh release create $tag databricks-cli.*.nupkg --notes="$tag"
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
