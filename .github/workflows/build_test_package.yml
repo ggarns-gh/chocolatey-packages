@@ -35,7 +35,6 @@ jobs:
       - name: Upload my-artifact
         uses: actions/upload-artifact@v7
         with:
-          name: my-artifact
           path: databricks-cli.*.nupkg
           retention-days: 5
           if-no-files-found: error
