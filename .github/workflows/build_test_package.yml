@@ -23,13 +23,10 @@ jobs:
       - name: Check Package Version
         run: |
           . ./manual/databricks-cli/tools/config.ps1
-
           $expectedOutput = "Databricks CLI v$cliVersion"
           $actualOutput = databricks -v
-
           echo "Expected CLI Output: $expectedOutput"
           echo "Actual CLI Output: $actualOutput"
-
           If ($actualOutput -ne $expectedOutput) {exit 1}
 
       - name: Upload Artifact
