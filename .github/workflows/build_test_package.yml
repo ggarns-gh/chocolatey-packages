@@ -3,7 +3,7 @@ name: Build & Test Package
 on: [push, workflow_call, workflow_dispatch]
 
 jobs:
-  build:
+  build-test:
     name: Build & Test Package
     runs-on: windows-latest
     steps:
