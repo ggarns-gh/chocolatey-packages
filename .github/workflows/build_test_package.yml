@@ -32,7 +32,7 @@ jobs:
 
           If ($actualOutput -ne $expectedOutput) {exit 1}
 
-      - name: Upload my-artifact
+      - name: Upload Artifact
         uses: actions/upload-artifact@v7
         with:
           path: databricks-cli.*.nupkg
