@@ -4,6 +4,7 @@ on: [workflow_dispatch]
 
 jobs:
   call-build-test:
+    if: ${{ github.ref_type == 'branch' && github.ref_name == 'main' }}
     uses: ./.github/workflows/build_test_package.yml
 
   create-release:
