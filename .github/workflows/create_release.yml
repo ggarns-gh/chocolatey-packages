@@ -27,7 +27,7 @@ jobs:
         run: |
           . ./manual/databricks-cli/tools/config.ps1
           $tag = "databricks-cli-v$cliVersion"
-          gh release create $tag databricks-cli.*.nupkg
+          gh release create $tag "databricks-cli.$cliVersion.nupkg" --title=$tag
         shell: pwsh
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
