@@ -1,0 +1,38 @@
+name: Push Package
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag (leave blank for latest)"
+        required: false
+        default: ""
+        type: string
+
+jobs:
+  push-package:
+    if: ${{ github.ref_type == 'branch' && github.ref_name == 'main' }}
+    name: Push Package
+    runs-on: windows-latest
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Download Artifact From Release
+        id: download-artifact
+        run: |
+          gh release download ${{ inputs.tag }} --dir='..' --pattern='databricks-cli.*.nupkg'
+          $packageFilename = Get-Childitem -Path '..' -File -Filter 'databricks-cli.*.nupkg' -Name | Select-Object -First 1
+          if ([string]::IsNullOrEmpty($packageFilename)) {exit 1}
+          "package_filename=$packageFilename" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Choco Push
+        uses: crazy-max/ghaction-chocolatey@v4
+        with:
+          args: push ../${{ steps.download-artifact.outputs.package_filename }} --source "'https://push.chocolatey.org/'" --api-key "'${{ secrets.CHOCO_API_KEY }}'"
