@@ -1,3 +1,3 @@
-﻿$cliVersion = "1.19.0"
-$url64bit   = 'https://github.com/databricks/cli/releases/download/v1.19.0/databricks_cli_1.19.0_windows_amd64.zip'
-$checksum64 = 'f5fb771698472b7e4410b1ab06f7fc04119400f218b84cb1c672e245a8fe7658'
+﻿$cliVersion = "1.20.0"
+$url64bit   = 'https://github.com/databricks/cli/releases/download/v1.20.0/databricks_cli_1.20.0_windows_amd64.zip'
+$checksum64 = 'e5c44076ba7062962ce96d303f2dbcec7c21a2c9f3b5797f2514fb45ac8a1736'
